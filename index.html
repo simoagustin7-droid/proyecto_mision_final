@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISSION SCIENCE - FINAL EDITION</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="loaderBox">
+            <h1>MISSION SCIENCE</h1>
+            <div class="bar"><div id="progress"></div></div>
+            <div id="registerForm" style="display: none; margin-top: 20px;">
+                <input type="text" id="username" placeholder="Ingresa tu nombre de Agente" autocomplete="off">
+                <button id="btnStart">Iniciar Misión</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameContainer" class="hidden">
+        <header>
+            <h2>Agente: <span id="playerIdentity">-</span></h2>
+            <div class="stats">
+                <span>XP: <span id="playerXP">0</span></span>
+                <span>Nivel: <span id="playerLevel">1</span></span>
+            </div>
+        </header>
+
+        <main>
+            <h3>Panel de Misiones Científicas</h3>
+            <div class="grid-misiones">
+                <button class="btn-mision" onclick="startMision('biology')">Misión Biología</button>
+                <button class="btn-mision" onclick="startMision('physics')">Misión Física</button>
+            </div>
+        </main>
+    </div>
+
+    <div id="snake-game" class="hidden game-overlay">
+        <h2>SIMULACIÓN: SNAKE VECTOR</h2>
+        <div class="score-board">Puntuación: <span id="snakeScore">0</span></div>
+        <canvas id="snakeCanvas" width="400" height="400"></canvas>
+        <br>
+        <button onclick="closeSnake()" class="btn-exit">Cerrar Simulación</button>
+    </div>
+
+    <div id="pacman-game" class="hidden game-overlay">
+        <h2>SIMULACIÓN: PAC-MAN PROTOCOL</h2>
+        <div class="score-board">Puntos: <span id="pacmanScore">0</span></div>
+        <canvas id="pacmanCanvas" width="400" height="400"></canvas>
+        <br>
+        <button onclick="closePacman()" class="btn-exit">Cerrar Simulación</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="game.js"></script>
+</body>
+</html>
