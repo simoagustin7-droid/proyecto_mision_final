@@ -66,9 +66,13 @@ document.getElementById('btnStart').addEventListener('click', async () => {
         document.getElementById('loader').classList.add('hidden');
         document.getElementById('gameContainer').classList.remove('hidden');
 
-    } catch (err) {
-        console.error("Error con Supabase:", err);
-        alert("Error de conexión. Revisa tus credenciales o conexión a la red.");
+    catch (err) {
+    console.error("Error completo de Supabase:", err);
+    // Esto imprimirá el mensaje de error real del servidor en la consola
+    if (err.message) {
+        alert("Error: " + err.message);
+    }
+}
     }
 });
 
